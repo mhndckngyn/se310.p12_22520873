@@ -45,5 +45,7 @@ tr:nth-child(even) {
 }
 
 .product {
-  border: 1px solid darkgreen;
+  width: 400px;
+  margin-bottom: 10px;
+  border: 2px solid darkgreen;
 }
