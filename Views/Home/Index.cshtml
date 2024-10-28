@@ -1,0 +1,18 @@
+﻿@model List<SanPham>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3 class="display-4">Welcome</h3>
+</div>
+
+<div>
+@foreach (var item in Model)
+{
+    <div class="product">
+        <p>@item.TenSanPham - @item.Gia k</p>
+    </div>
+}
+</div>

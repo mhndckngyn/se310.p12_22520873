@@ -1,0 +1,51 @@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model System.Collections.Generic.List<se310_th.Models.SanPham>
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Danh mục sản phẩm</title>
+</head>
+<body>
+<div>
+    <p><a asp-area="Admin" asp-controller="HomeAdmin" asp-action="Index">Quay lại dashboard</a></p>
+    <p><a asp-area="Admin" asp-controller="HomeAdmin" asp-action="TaoSanPham">Thêm sản phẩm mới</a></p>
+    <p>@TempData["message"]</p>
+    <table class="table">
+        <thead>
+        <tr>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá bán</th>
+        <th>Số lượng</th>
+        <th>Mã loại</th>
+        <th>Actions</th>
+        <tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaSanPham</td>
+                <td>@item.TenSanPham</td>
+                <td>@item.Gia</td>
+                <td>@item.SoLuong</td>
+                <td>@item.MaLoai</td>
+                <td>
+                    <p>
+                        <a asp-area="Admin" asp-controller="HomeAdmin" asp-action="SuaSanPham" asp-route-maSanPham="@item.MaSanPham">Edit</a> |
+                        <a asp-area="Admin" asp-controller="HomeAdmin" asp-action="XoaSanPham" asp-route-maSanPham="@item.MaSanPham">Delete</a>
+                    </p>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

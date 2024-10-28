@@ -1,0 +1,45 @@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model System.Collections.Generic.List<se310_th.Models.LoaiSanPham>
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Loại sản phẩm</title>
+</head>
+<body>
+<div>
+    <p><a asp-area="Admin" asp-controller="HomeAdmin" asp-action="Index">Quay lại dashboard</a></p>
+    <p><a asp-area="Admin" asp-controller="HomeAdmin" asp-action="TaoLoaiSanPham">Thêm loại sản phẩm</a></p>
+    <p>@TempData["message"]</p>
+    <table class="table">
+        <thead>
+        <tr>
+        <th>Mã loại sản phẩm</th>
+        <th>Tên loại</th>
+        <th>Actions</th>
+        <tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaLoai</td>
+                <td>@item.TenLoai</td>
+                <td>
+                    <p>
+                        <a asp-area="Admin" asp-controller="HomeAdmin" asp-action="SuaLoaiSanPham" asp-route-maLoaiSanPham="@item.MaLoai">Edit</a> |
+                        <a asp-area="Admin" asp-controller="HomeAdmin" asp-action="XoaLoaiSanPham" asp-route-maLoaiSanPham="@item.MaLoai">Delete</a>
+                    </p>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

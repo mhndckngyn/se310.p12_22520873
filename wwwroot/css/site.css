@@ -1,0 +1,49 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Thiết lập kiểu dáng cơ bản cho bảng */
+table {
+  width: 100%;                 /* Chiều rộng bảng chiếm 100% của container */
+  border-collapse: collapse;   /* Loại bỏ khoảng cách giữa các ô */
+}
+
+/* Định dạng cho các ô trong bảng */
+th, td {
+  padding: 12px;               /* Khoảng cách trong các ô */
+  text-align: left;            /* Canh trái nội dung */
+  border: 1px solid #ddd;      /* Đường viền giữa các ô */
+}
+
+/* Thiết lập màu nền và chữ cho tiêu đề */
+th {
+  background-color: #4CAF50;   /* Nền xanh lá cho tiêu đề */
+}
+
+/* Màu nền xen kẽ cho các dòng */
+tr:nth-child(even) {
+  background-color: #f2f2f2;   /* Màu xám nhạt cho các dòng chẵn */
+}
+
+.product {
+  border: 1px solid darkgreen;
+}
